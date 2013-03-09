@@ -1,0 +1,9 @@
+{% if photos %}
+	<ul class="photos">
+		{% for photo in photos %}
+			<li><img src="{{ photo.getUrl('siteThumb') }}"></li>
+		{% endfor %}
+	</ul>
+{% else %}
+	<p>No photos yet.</p>
+{% endif %}

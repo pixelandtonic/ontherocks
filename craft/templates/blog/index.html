@@ -1,0 +1,15 @@
+{% requireLogin %}
+
+{% extends "_layout" %}
+{% set title = "Blog" %}
+
+{% set content %}
+	<h1>{{ title }}</h1>
+
+	{% for entry in blx.entries.section('blog').find() %}
+		<article>
+			<h2><a href="{{ entry.url }}">{{ entry.title }}</a></h2>
+			{{ entry.summary }}
+		</article>
+	{% endfor %}
+{% endset %}

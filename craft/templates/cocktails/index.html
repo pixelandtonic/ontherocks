@@ -1,0 +1,12 @@
+{% extends "_layout" %}
+{% set title = "Cocktails" %}
+
+{% set content %}
+	<h1>{{ title }}</h1>
+
+	<ul>
+		{% for entry in blx.entries.section('cocktails').order('title').find() %}
+			<li><a href="{{ url(entry.url) }}">{{ entry.title }}</a></li>
+		{% endfor %}
+	</ul>
+{% endset %}

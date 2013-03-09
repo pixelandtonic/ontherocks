@@ -1,0 +1,32 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% set content %}
+	<h1>{{ entry.title }}</h1>
+
+	{% include "_includes/photos" with { photos: entry.photos } only %}
+
+	{% if entry.inventedBy %}
+		<h2>Invented By</h2>
+		<ul class="bullets">
+			{% for inventor in entry.inventedBy %}
+				<li>{{ inventor.fullName }}</li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if entry.ingredients %}
+		<h2>Ingredients</h2>
+		<ul class="bullets">
+			{% for ingredient in entry.ingredients %}
+				<li><a href="{{ ingredient.url }}">{{ ingredient.title }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+
+	{% if entry.description %}
+		<h2>Description</h2>
+		{{ entry.description }}
+	{% endif %}
+
+{% endset %}

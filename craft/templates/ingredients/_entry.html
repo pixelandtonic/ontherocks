@@ -1,0 +1,8 @@
+{% extends "_layout" %}
+{% set title = entry.title %}
+
+{% set content %}
+	<h1>{{ title }}</h1>
+
+	{% include "_includes/photos" with { photos: entry.photos } only %}
+{% endset %}
