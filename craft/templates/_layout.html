@@ -25,7 +25,7 @@
 			<ul id="loginForm">
 				<li>
 					<form method="post" action="{{ loginUrl }}" accept-charset="UTF-8">
-						<input class="text" type="text" name="loginName" value="{{ blx.session.rememberedUsername }}" placeholder="Username or email">
+						<input class="text" type="text" name="loginName" value="{{ craft.session.rememberedUsername }}" placeholder="Username or email">
 						<input class="text" type="password" name="password" placeholder="Password">
 						<input class="submit" type="submit" value="Login">
 					</form>
@@ -48,7 +48,7 @@
 	</div>
 
 	<div id="main">
-		{% for type, message in blx.session.flashes %}
+		{% for type, message in craft.session.flashes %}
 			<div class="flash {{ type }}">{{ message }}</div>
 		{% endfor %}
 
