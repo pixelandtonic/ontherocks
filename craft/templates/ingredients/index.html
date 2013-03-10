@@ -5,7 +5,7 @@
 	<h1>{{ title }}</h1>
 
 	<ul>
-		{% for entry in blx.entries.section('ingredients').order('title').find() %}
+		{% for entry in craft.entries.section('ingredients').order('title').find() %}
 			<li><a href="{{ url(entry.url) }}">{{ entry.title }}</a></li>
 		{% endfor %}
 	</ul>

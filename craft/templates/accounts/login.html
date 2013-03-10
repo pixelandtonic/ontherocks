@@ -6,10 +6,10 @@
 
 	<form class="form" method="post" action="" accept-charset="UTF-8">
 		<input type="hidden" name="action" value="accounts/login">
-		<input type="hidden" name="redirect" value="{{ blx.session.returnUrl }}">
+		<input type="hidden" name="redirect" value="{{ craft.session.returnUrl }}">
 
 		<h3 class="first"><label for="loginName">Username or email</label></h3>
-		<input id="loginName" class="text fulltext" type="text" name="loginName" value="{{ blx.session.rememberedUsername }}">
+		<input id="loginName" class="text fulltext" type="text" name="loginName" value="{{ craft.session.rememberedUsername }}">
 
 		<h3><label for="password">Password</label></h3>
 		<input id="password" class="text fulltext" type="password" name="password">

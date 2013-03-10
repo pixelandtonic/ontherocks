@@ -5,14 +5,14 @@
 	{{ page.siteintro }}
 
 	{% for year in now.year .. 2010 %}
-		{% set total = blx.entries.after(year).before(year+1).total %}
+		{% set total = craft.entries.after(year).before(year+1).total %}
 		{% if total %}
 	        <li> <a href="{{ url('archive/'~year) }}">{{ year }}</a> ({{ total }} entries)</li>
 	    {% endif %}
 	{% endfor %}
 
 	{# macro yearArchiveLink(year) %}
-	    {% set total = blx.entries.after(year).before(year+1).total %}
+	    {% set total = craft.entries.after(year).before(year+1).total %}
 	    {% if total > 0 %}
 	        <li> <a href="{{ url('archive/'~year) }}">{{ year }} ({{ total }})</a></li>
 	        {{ _self.yearArchiveLink(year-1) }}
@@ -23,7 +23,7 @@
 
 	{{ macros.yearArchiveLink(now.year) #}
 
-	{% for item in blx.feeds.getFeedItems('http://cognition.happycog.com/site/empire_feed', 0, 10) %}
+	{% for item in craft.feeds.getFeedItems('http://cognition.happycog.com/site/empire_feed', 0, 10) %}
 		<li><a href="{{ item.permalink }}">{{ item.title }}</a><br>by {{ item.authors[0].name }} on {{ item.date }}<br><br>
 
 			{{ item.content }}</li>
