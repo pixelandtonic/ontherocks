@@ -6,15 +6,6 @@
 
 	{% include "_includes/photos" with { photos: entry.photos } only %}
 
-	{% if entry.inventedBy %}
-		<h2>Invented By</h2>
-		<ul class="bullets">
-			{% for inventor in entry.inventedBy %}
-				<li>{{ inventor.fullName }}</li>
-			{% endfor %}
-		</ul>
-	{% endif %}
-
 	{% if entry.ingredients %}
 		<h2>Ingredients</h2>
 		<ul class="bullets">

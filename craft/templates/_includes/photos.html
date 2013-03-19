@@ -1,7 +1,9 @@
 {% if photos %}
+	{% set thumb = { height: 150 } %}
+
 	<ul class="photos">
 		{% for photo in photos %}
-			<li><img src="{{ photo.getUrl('siteThumb') }}"></li>
+			<li><img src="{{ photo.getUrl(thumb) }}" width="{{ photo.getWidth(thumb) }}" height="{{ photo.getHeight(thumb) }}"></li>
 		{% endfor %}
 	</ul>
 {% else %}
