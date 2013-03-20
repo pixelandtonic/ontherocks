@@ -6,7 +6,7 @@
 
 	<ul>
 		{% for entry in craft.entries.section('cocktails').order('title').find() %}
-			<li><a href="{{ url(entry.url) }}">{{ entry.title }}</a></li>
+			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
 		{% endfor %}
 	</ul>
 {% endset %}
