@@ -1,2 +1,3 @@
 *.DS_Store
-*license.key
+craft/config/license.key
+public/images/drinks/_AUTOx150_crop/*

@@ -1,0 +1,64 @@
+/* reset */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+table { border-collapse: separate; border-spacing: 0; }
+a { text-decoration: none; }
+input, textarea { margin: 0; font-family: 'Lucida Grande', sans-serif; font-size: 100%; }
+textarea { resize: none; }
+select { margin: 0; }
+
+.buttons { margin-top: 1.5em; }
+.text { font-family: HelveticaNeue, sans-serif; }
+.fulltext { width: 100%; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; }
+.submit { border: 1px solid hsl(58, 67%, 41%); background: hsl(58, 67%, 50%); color: #fff; font-family: Futura-CondensedMedium; text-transform: uppercase; vertical-align: middle; }
+
+/* header */
+#header { position: relative; padding: 10px; height: 34px; background: #fafafa; border-bottom: 1px solid #eee; text-align: right; line-height: 24px; overflow: hidden; }
+#header ul { position: absolute; top: 10px; right: 10px; }
+#header ul li { float: left; padding: 5px 10px; font-family: HelveticaNeue, sans-serif; color: #999; }
+#header ul li + li { border-left: 1px solid #eee; }
+#header ul li a { color: hsl(58, 67%, 41%); }
+#header ul li a:hover { text-decoration: underline; }
+
+#header #loginForm { display: none; }
+#header #loginForm .text { font-size: 13px; line-height: 18px; vertical-align: middle; }
+#header #loginForm .submit { height: 24px; }
+
+
+/* sidebar */
+#sidebar { position: fixed; top: 25px; left: 50px; width: 225px; height: 100%; }
+#sidebar h1 a { display: block; border-radius: 200px; width: 225px; height: 225px; text-indent: -500px; background: url(../images/ontherocks.jpg) no-repeat 0 0; background-size: 225px 225px; }
+
+#sidebar nav ul { margin-top: 50px; }
+#sidebar nav ul li { margin-top: 10px; text-align: center; }
+#sidebar nav ul li a { font-family: Futura-CondensedMedium; text-transform: uppercase; font-size: 30px; line-height: 45px; text-decoration: none; color: #b0ab23; }
+
+/* main */
+#main { margin: 50px 50px 50px 350px; max-width: 700px; font-family: Futura-Medium; color: #999; font-size: 22px; line-height: 1.4; }
+
+#main .flash { margin: 1em 0; padding: 5px 10px; }
+#main .flash.notice { border: 1px solid #1F6794; color: #1F6794; }
+#main .flash.error { border: 1px solid #992f2f; color: #992f2f; }
+
+#main .form { margin: 1em 0; padding: 25px; background: #fbf6e7; }
+#main label.checkbox { display: block; margin: 1em 0; }
+
+#main ul.errors { color: #992f2f; font-size: 13px; }
+#main ul.errors li { margin-top: 0.25em; }
+
+#main h1 { margin-bottom: 25px; font-family: Futura-CondensedMedium; font-size: 70px; color: #000; text-transform: uppercase; }
+#main h2 { margin: 1em 0; font-family: Futura-CondensedMedium; text-transform: uppercase; font-size: 30px; color: #666; }
+#main h3 { margin: 1em 0 0.1em; font-family: Futura-CondensedMedium; text-transform: uppercase; font-size: 24px; color: #666; }
+
+.first { margin-top: 0 !important; }
+
+#main .photos { margin: 1em 0; }
+#main .photos li { float: left; margin: 0 1em 1em 0; }
+#main .photos:after { content: '.'; display: block; height: 0; clear: both; visibility: hidden; }
+
+#main i, #main em { font-family: Futura-MediumItalic; }
+#main ul.bullets { margin: 1em 0 1em 2em; list-style-type: square; }
