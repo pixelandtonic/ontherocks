@@ -1,0 +1,10 @@
+{% extends "_layouts/message" %}
+{% set title = "Update Craft"|t %}
+
+{% set content %}
+	<p>{{ "You need to be on at least Craft build {minBuild} before you can manually update to Craft {targetVersion} build {targetBuild}."|t({
+			minBuild:      minBuild,
+			targetVersion: targetVersion,
+			targetBuild:   targetBuild
+		}) }}</p>
+{% endset %}

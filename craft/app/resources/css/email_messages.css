@@ -1,0 +1,13 @@
+.message { position: relative; cursor: pointer; }
+
+.message:hover { padding-right: 26px; }
+
+.message:hover:after { position: absolute; top: 18px; right: 15px; display: inline-block; font-family: 'pictosregular'; font-size: 20px; text-align: center; text-transform: none; font-style: normal; font-weight: normal; vertical-align: middle; -webkit-font-smoothing: subpixel-antialiased; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; content: '✎'; color: #5295ff; }
+
+.message .subject { padding-bottom: 15px; border-bottom: 1px solid #dbdbdb; margin-bottom: 15px; }
+
+.message .body { font-size: 12px; line-height: 16px; font-family: Courier, monospace; color: #999; }
+
+.message-settings { width: 500px; }
+
+.message-settings .header .right { top: 12px; }

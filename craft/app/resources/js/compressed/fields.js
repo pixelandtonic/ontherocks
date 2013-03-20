@@ -1,0 +1,10 @@
+/*!
+ * Craft by Pixel & Tonic
+ *
+ * @package   Craft
+ * @author    Pixel & Tonic, Inc.
+ * @copyright Copyright (c) 2013, Pixel & Tonic, Inc.
+ * @license   http://buildwithcraft.com/license1.0.html Craft License
+ * @link      http://buildwithcraft.com
+ */
+(function(b){var a=Garnish.Base.extend({$groups:null,$selectedGroup:null,init:function(){this.$groups=b("#groups");this.$selectedGroup=this.$groups.find("a.sel:first");this.addListener(b("#newgroupbtn"),"activate","addNewGroup");var d=b("#groupsettingsbtn");if(d.length){var c=d.data("menubtn");c.settings.onOptionSelect=b.proxy(function(e){var f=b(e).data("action");switch(f){case"rename":this.renameSelectedGroup();break;case"delete":this.deleteSelectedGroup();break}},this)}},addNewGroup:function(){var c=this.promptForGroupName();if(c){var d={name:c};Craft.postActionRequest("fields/saveGroup",d,b.proxy(function(e){if(e.success){location.href=Craft.getUrl("settings/fields/"+e.group.id)}else{var f=this.flattenErrors(e.errors);alert(Craft.t("Could not create the group:")+"\n\n"+f.join("\n"))}},this))}},renameSelectedGroup:function(){var d=this.$selectedGroup.text(),c=this.promptForGroupName(d);if(c&&c!=d){var e={id:this.$selectedGroup.data("id"),name:c};Craft.postActionRequest("fields/saveGroup",e,b.proxy(function(f){if(f.success){this.$selectedGroup.text(f.group.name);Craft.cp.displayNotice(Craft.t("Group renamed."))}else{var g=this.flattenErrors(f.errors);alert(Craft.t("Could not rename the group:")+"\n\n"+g.join("\n"))}},this))}},promptForGroupName:function(c){return prompt(Craft.t("What do you want to name your group?"),c)},deleteSelectedGroup:function(){if(confirm(Craft.t("Are you sure you want to delete this group and all its fields?"))){var c={id:this.$selectedGroup.data("id")};Craft.postActionRequest("fields/deleteGroup",c,b.proxy(function(d){if(d.success){location.href=Craft.getUrl("settings/fields")}else{alert(Craft.t("Could not delete the group."))}},this))}},flattenErrors:function(e){var d=[];for(var c in e){d=d.concat(response.errors[c])}return d}});Garnish.$doc.ready(function(){Craft.FieldsAdmin=new a()})})(jQuery);
