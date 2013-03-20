@@ -1,3 +1,13 @@
+{#
+ # This template is loaded whenever the URL matches a Cocktails section entry,
+ # because the Cocktails section's "Entry Template" setting is set to "cocktails/_entry".
+ #
+ # Craft will pre-populate an 'entry' variable with the matched Cocktails entry
+ # when loading this template.
+ #
+ # See: http://docs.buildwithcraft.com/overview/routing.html
+ #}
+
 {% extends "_layout" %}
 {% set title = entry.title %}
 

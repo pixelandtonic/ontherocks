@@ -1,11 +1,39 @@
+{#
+ # This template is included by the following templates:
+ #
+ #  - cocktails/_entry.html
+ #  - ingredients/_entry.html
+ #
+ # Both of those templates pass a 'photos' variable to this template,
+ # which is set to the current entry's "Photos" Links field value.
+ #
+ # If any photos are actually selected in the field, we'll loop through each of them,
+ # outputting a thumbnail that is 150px tall, with an automatic width.
+ #
+ # If no photos are selected, we'll simply output a paragraph saying so.
+ #}
+
 {% if photos %}
+
+	{# Define a 'thumb' object that sets the parameters for our thumbnail image transforms #}
 	{% set thumb = { height: 150 } %}
 
 	<ul class="photos">
+
+		{# Loop through each of the photos, assigning each one to a variable called 'photo' #}
 		{% for photo in photos %}
-			<li><img src="{{ photo.getUrl(thumb) }}" width="{{ photo.getWidth(thumb) }}" height="{{ photo.getHeight(thumb) }}"></li>
+
+			{# Output a thumbnail for the photo by passing our 'thumb' object into the photo's URL, width, and height functions #}
+			<li>
+				<img src="{{ photo.getUrl(thumb) }}" width="{{ photo.getWidth(thumb) }}" height="{{ photo.getHeight(thumb) }}">
+			</li>
+
 		{% endfor %}
+
 	</ul>
+
 {% else %}
+
 	<p>No photos yet.</p>
+
 {% endif %}
