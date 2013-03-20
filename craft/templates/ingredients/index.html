@@ -5,8 +5,8 @@
 	<h1>{{ title }}</h1>
 
 	<ul>
-		{% for entry in craft.entries.section('ingredients').order('title').find() %}
-			<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+		{% for ingredient in craft.entries.section('ingredients').order('title').find() %}
+			<li><a href="{{ ingredient.url }}">{{ ingredient.title }}</a></li>
 		{% endfor %}
 	</ul>
 {% endset %}
