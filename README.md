@@ -1,6 +1,6 @@
 # *On the Rocks* Craft demo site
 
-This repo contains all of the back-end and front-end files, as well as a MySQL DB dump, for *On the Rocks*, a demo site built with [Craft](http://buildwithcraft.com).
+This repo contains all of the templates, front-end resources, and a MySQL DB dump for *On the Rocks*, a demo site built with [Craft](http://buildwithcraft.com).
 
 It has the following features:
 
