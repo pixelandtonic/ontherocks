@@ -29,12 +29,16 @@ To get *On the Rocks* running locally, follow these instructions:
 1. Download/clone the repo on your computer
 2. Set the permissions on craft/storage/ to 777
 3. Set the permissions on craft/config/ to 666
-4. Create a new MySQL database called “ontherocks”
-5. Import SQL/ontherocks.sql into your new database
-6. Fill in the proper MySQL credentials in craft/config/db.php
-7. Create a new virtual host with the hostname “ontherocks.dev” that points to the public/ folder
+4. Download the latest version of Craft from [buildwithcraft.com](http://buildwithcraft.com)
+5. Move the craft/app/ folder from Craft.zip into ontherocks/craft/
+6. Create a new MySQL database called “ontherocks”
+7. Import SQL/ontherocks.sql into your new database
+8. Fill in the proper MySQL credentials in craft/config/db.php
+9. Create a new virtual host with the hostname “ontherocks.dev” that points to the public/ folder
 
-Now you should be able to point your web browser to http://ontherocks.dev and see the *On the Rocks* homepage.
+Now you should be able to point your web browser to http://ontherocks.dev/admin. You should either see a Craft login screen, or a prompt telling you that some database updates need to be run. If it’s the latter, just click “Finish up”.
+
+Now point your browser at http://ontherocks.dev. You should see the *On the Rocks* homepage.
 
 
 ## Logging in
