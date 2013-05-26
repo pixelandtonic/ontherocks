@@ -14,7 +14,6 @@ It has the following features:
 * Front-end user [registration](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/register.html), [login](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/login.html), and [password resetting](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/forgotpassword.html)
 * A custom [404 template](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/404.html)
 
-
 ## Packages in Use
 
 This site makes use of the [Publish Pro](http://docs.buildwithcraft.com/packages/publishpro.html) and [Users](http://docs.buildwithcraft.com/packages/users.html) packages.
@@ -27,14 +26,53 @@ As long as you’re running the site from http://ontherocks.dev, you will not be
 To get *On the Rocks* running locally, follow these instructions:
 
 1. Download/clone the repo on your computer
+
+		$ git clone https://github.com/pixelandtonic/ontherocks.git
+
 2. Set the permissions on craft/storage/ to 777
-3. Set the permissions on craft/config/ to 666
+
+		$ cd ontherocks
+		$ chmod 777 craft/storage/
+
+3. Set the permissions on craft/config/ to 744, 774, or 777 depending on the relationship between the user that Apache/PHP is running as and the user who owns the craft/config folder. (See the [Craft installation docs](http://docs.buildwithcraft.com/installation.html#installing-craft) for details.)
+
+		$ chmod 774 craft/config
+
 4. Download the latest version of Craft from [buildwithcraft.com](http://buildwithcraft.com)
+
+		$ curl -L http://buildwithcraft.com/Craft.zip -o /tmp/Craft.zip
+		$ unzip /tmp/Craft.zip -d BaseCraft
+
 5. Move the craft/app/ folder from Craft.zip into ontherocks/craft/
+
+		$ cp BaseCraft/craft/app craft/app
+		$ rm -R BaseCraft && rm /tmp/Craft.zip
+
 6. Create a new MySQL database called “ontherocks”
+		
+		$ mysql -u root -p
+		Enter password:
+		mysql>
+
+	```sql
+	CREATE DATABASE ontherocks CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+	GRANT ALL ON ontherocks.* TO 'rocks_user'@'localhost' identified by 'yourpasswordhere';
+	FLUSH PRIVILEGES;
+	USE ontherocks;
+	```
+
+	This can also be done via a management tool like phpMyAdmin.
+
+
 7. Import SQL/ontherocks.sql into your new database
-8. Fill in the proper MySQL credentials in craft/config/db.php
+
+	```sql
+	mysql>source SQL/ontherocks.sql
+	```
+
+8. Fill in the proper MySQL credentials in craft/config/db.php (from step 6)
 9. Create a new virtual host with the hostname “ontherocks.dev” that points to the public/ folder
+10. Edit your hosts file to resolve ontherocks.dev to 127.0.0.1, if necessary
 
 Now you should be able to point your web browser to http://ontherocks.dev/admin. You should either see a Craft login screen, or a prompt telling you that some database updates need to be run. If it’s the latter, just click “Finish up”.
 
