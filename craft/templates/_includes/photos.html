@@ -16,24 +16,24 @@
 {% if photos %}
 
 	{# Define a 'thumb' object that sets the parameters for our thumbnail image transforms #}
-	{% set thumb = { height: 150 } %}
+	{% set thumb = { height: 100 } %}
 
-	<ul class="photos">
+	<div class="photos pane">
 
-		{# Loop through each of the photos, assigning each one to a variable called 'photo' #}
-		{% for photo in photos %}
+		<h2>Photos</h2>
 
-			{# Output a thumbnail for the photo by passing our 'thumb' object into the photo's URL, width, and height functions #}
-			<li>
-				<img src="{{ photo.getUrl(thumb) }}" width="{{ photo.getWidth(thumb) }}" height="{{ photo.getHeight(thumb) }}">
-			</li>
+		<ul>
+			{# Loop through each of the photos, assigning each one to a variable called 'photo' #}
+			{% for photo in photos %}
 
-		{% endfor %}
+				{# Output a thumbnail for the photo by passing our 'thumb' object into the photo's URL, width, and height functions #}
+				<li>
+					<img src="{{ photo.getUrl(thumb) }}" width="{{ photo.getWidth(thumb) }}" height="{{ photo.getHeight(thumb) }}">
+				</li>
 
-	</ul>
+			{% endfor %}
+		</ul>
 
-{% else %}
-
-	<p>No photos yet.</p>
+	</div>
 
 {% endif %}

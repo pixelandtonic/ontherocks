@@ -11,23 +11,58 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
 
-{% set content %}
-	<h1>{{ entry.title }}</h1>
 
-	{% include "_includes/photos" with { photos: entry.photos } only %}
+{% block head %}
+	{{ parent() }}
 
-	{% if entry.ingredients %}
-		<h2>Ingredients</h2>
-		<ul class="bullets">
-			{% for ingredient in entry.ingredients %}
-				<li><a href="{{ ingredient.url }}">{{ ingredient.title }}</a></li>
-			{% endfor %}
-		</ul>
+	{% if entry.linkColor and entry.linkColor != '#000000' %}
+		<style type="text/css">
+			a {
+				color: {{ entry.linkColor }};
+			}
+			#header ul li a.sel,
+			#header ul li a:hover {
+				border-bottom-color: {{ entry.linkColor }};
+			}
+		</style>
 	{% endif %}
 
-	{% if entry.description %}
-		<h2>Description</h2>
-		{{ entry.description }}
+	{% if entry.photos %}
+		<style type="text/css">
+			#main header {
+				margin-bottom: 50px;
+				background-image: url('{{ entry.photos[0].url }}');
+			}
+			#main header h1 {
+				color: #000;
+				border-bottom-color: #000;
+			}
+		</style>
 	{% endif %}
+{% endblock %}
 
-{% endset %}
+
+{% block content %}
+	<div class="packery-container">
+		{% if entry.ingredients %}
+			<div class="ingredients pane">
+				<h2>Ingredients</h2>
+
+				<ul class="bullets">
+					{% for ingredient in entry.ingredients %}
+						<li><a href="{{ ingredient.url }}">{{ ingredient.title }}</a></li>
+					{% endfor %}
+				</ul>
+			</div>
+		{% endif %}
+
+		{% include "_includes/photos" with { photos: entry.photos } only %}
+
+		{% if entry.description %}
+			<div class="description pane">
+				<h2>Description</h2>
+				{{ entry.description }}
+			</div>
+		{% endif %}
+	</div>
+{% endblock %}

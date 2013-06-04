@@ -1,12 +1,7 @@
 {% extends "_layout" %}
 {% set title = "Cocktails" %}
 
-{% set content %}
-	<h1>{{ title }}</h1>
-
-	<ul>
-		{% for cocktail in craft.entries.section('cocktails').order('title').find() %}
-			<li><a href="{{ cocktail.url }}">{{ cocktail.title }}</a></li>
-		{% endfor %}
-	</ul>
-{% endset %}
+{% block content %}
+	{% set cocktails = craft.entries.section('cocktails').order('title').find() %}
+	{% include "_includes/a-z" with { entries: cocktails } %}
+{% endblock %}

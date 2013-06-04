@@ -2,7 +2,7 @@
 {% set title = "Create an Account" %}
 {% import "_includes/forms" as forms %}
 
-{% set content %}
+{% block content %}
 	<h1>{{ title }}</h1>
 
 	<form class="form" method="post" action="" accept-charset="UTF-8">
@@ -32,4 +32,4 @@
 			<input class="submit" type="submit" value="Register">
 		</div>
 	</form>
-{% endset %}
+{% endblock %}

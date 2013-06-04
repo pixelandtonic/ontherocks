@@ -11,7 +11,12 @@
 {% extends "_layout" %}
 {% set title = entry.title %}
 
-{% set content %}
-	<h1>{{ title }}</h1>
-	<p>{{ entry.body }}</p>
-{% endset %}
+{% block content %}
+	<div class="intro">
+		<p>Written by {{ entry.author }} on {{ entry.postDate|date('M d, Y') }}</p>
+	</div>
+
+	<article class="pane">
+		<p>{{ entry.body }}</p>
+	</div>
+{% endblock %}

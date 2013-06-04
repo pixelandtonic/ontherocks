@@ -1,13 +1,17 @@
 {% extends "_layout" %}
 {% set title = "Blog" %}
 
-{% set content %}
-	<h1>{{ title }}</h1>
-
-	{% for blogPost in craft.entries.section('blog').find() %}
-		<article>
+{% block content %}
+	{% for blogPost in craft.entries.section('blog').status('live,pending').find() %}
+		<article class="pane">
 			<h2><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></h2>
-			{{ blogPost.summary }}
+			<p>Written by {{ entry.author }} on {{ entry.postDate|date('M d, Y') }}</p>
+			{{ blogPost.body.getPage(1) }}
+			<p><a href="{{ blogPost.url }}">Continue reading…</a></p>
 		</article>
+	{% else %}
+		<div class="pane">
+			<p>No posts yet :(</p>
+		</div>
 	{% endfor %}
-{% endset %}
+{% endblock %}

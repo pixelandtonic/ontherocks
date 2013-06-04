@@ -1,6 +1,12 @@
-{% extends "_layout" %}
+{#
+ # This is the homepage template!
+ #}
 
-{% set content %}
-	<h1>{{ homepage.heading }}</h1>
-	{{ homepage.siteIntro }}
-{% endset %}
+{% extends "_layout" %}
+{% set title = homepage.heading %}
+
+{% block content %}
+	<div class="intro">
+		{{ homepage.siteIntro }}
+	</div>
+{% endblock %}

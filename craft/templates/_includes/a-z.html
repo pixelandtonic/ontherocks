@@ -1,0 +1,17 @@
+{#
+ # This include template takes a passed-in array of entries (called “entries”),
+ # sorts it into groups indexed by the first letter of the entries’ titles,
+ # and outputs a big ol’ list.
+ #}
+
+<ul class="packery-container">
+	{% for letter, letterEntries in entries | group('title|upper|slice(0, 1)') %}
+		<div class="pane">
+			<h2>{{ letter }}</h2>
+
+			{% for entry in letterEntries %}
+				<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+			{% endfor %}
+		</div>
+	{% endfor %}
+</ul>

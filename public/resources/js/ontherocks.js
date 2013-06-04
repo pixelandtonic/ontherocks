@@ -9,3 +9,9 @@ $loginLink.on('click', function(event) {
 	$ul.animate({ top: 55 }, 'fast');
 	$loginForm.animate({ top: 10 }, 'fast');
 });
+
+// Packery
+$('.packery-container').packery({
+	itemSelector: '.pane',
+	gutter: 50
+});

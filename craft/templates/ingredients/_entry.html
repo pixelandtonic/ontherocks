@@ -5,14 +5,24 @@
  # Craft will pre-populate an 'entry' variable with the matched Ingredients entry
  # when loading this template.
  #
- # See: http://docs.buildwithcraft.com/overview/routing.html
+ # See: http://docs.buildwithcraft.com/reference/routing.html
  #}
 
 {% extends "_layout" %}
 {% set title = entry.title %}
 
-{% set content %}
-	<h1>{{ title }}</h1>
+{% block content %}
+	<div class="packery-container">
+		{% include "_includes/photos" with { photos: entry.photos } only %}
 
-	{% include "_includes/photos" with { photos: entry.photos } only %}
-{% endset %}
+		<div class="pane">
+			<h2>Used in</h2>
+
+			<ul class="bullets">
+				{% for cocktail in entry.parents('ingredients').section('cocktails').find() %}
+					<li><a href="{{ cocktail.url }}">{{ cocktail }}</a></li>
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+{% endblock %}
