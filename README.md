@@ -4,19 +4,19 @@ This repo contains all of the templates, front-end resources, and a MySQL DB dum
 
 It has the following features:
 
-* Multiple [sections](http://docs.buildwithcraft.com/overview/sections.html) (“Cocktails”, “Ingredients”, and “Blog”)
+* Multiple [sections](http://docs.buildwithcraft.com/diving-in/sections.html) (“Cocktails”, “Ingredients”, and “Blog”)
 * A local asset source (“Drinks”)
 * A Links field pointing to the Drinks asset source, used by the Cocktails and Ingredients sections
 * A Links field pointing to entries in the Ingredients section, used by the Cocktails section
-* A [global set](http://docs.buildwithcraft.com/overview/globals.html) called “Homepage” for editing the homepage fields
-* A [global set](http://docs.buildwithcraft.com/overview/globals.html) called “Globals” with a “Meta Description” field for editing the `<meta name="description">` tag’s `content` attribute
+* A [global set](http://docs.buildwithcraft.com/diving-in/globals.html) called “Homepage” for editing the homepage fields
+* A [global set](http://docs.buildwithcraft.com/diving-in/globals.html) called “Globals” with a “Meta Description” field for editing the `<meta name="description">` tag’s `content` attribute
 * A single [layout template](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/_layout.html) which all other site templates extend
 * Front-end user [registration](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/register.html), [login](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/login.html), and [password resetting](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/forgotpassword.html)
 * A custom [404 template](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/404.html)
 
 ## Packages in Use
 
-This site makes use of the [Publish Pro](http://docs.buildwithcraft.com/packages/publishpro.html) and [Users](http://docs.buildwithcraft.com/packages/users.html) packages.
+This site makes use of the [Publish Pro](http://docs.buildwithcraft.com/diving-in/packages/publishpro.html) and [Users](http://docs.buildwithcraft.com/diving-in/packages/users.html) packages.
 
 As long as you’re running the site from http://ontherocks.dev, you will not be notified that you haven’t purchased these packages. You will even have the option to install the other three packages, if you want to play around with them.
 
@@ -34,7 +34,7 @@ To get *On the Rocks* running locally, follow these instructions:
 		$ cd ontherocks
 		$ chmod 777 craft/storage/
 
-3. Set the permissions on craft/config/ to 744, 774, or 777 depending on the relationship between the user that Apache/PHP is running as and the user who owns the craft/config folder. (See the [Craft installation docs](http://docs.buildwithcraft.com/installation.html#installing-craft) for details.)
+3. Set the permissions on craft/config/ to 744, 774, or 777 depending on the relationship between the user that Apache/PHP is running as and the user who owns the craft/config folder. (See the [Craft installation docs](http://docs.buildwithcraft.com/installing/installing.html#preparing-to-install) for details.)
 
 		$ chmod 774 craft/config
 
