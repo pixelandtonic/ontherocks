@@ -11,4 +11,5 @@ return array(
 	//'devMode' => true,
 	'loginPath' => 'accounts/login',
 	'resetPasswordPath' => 'accounts/resetpassword',
+	'endpointSuffix' => '?staging=1'
 );
