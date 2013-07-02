@@ -45,7 +45,7 @@ To get *On the Rocks* running locally, follow these instructions:
 
 5. Move the craft/app/ folder from Craft.zip into ontherocks/craft/
 
-		$ cp BaseCraft/craft/app craft/app
+		$ cp -R BaseCraft/craft/app craft/app
 		$ rm -R BaseCraft && rm /tmp/Craft.zip
 
 6. Create a new MySQL database called “ontherocks”
@@ -56,7 +56,7 @@ To get *On the Rocks* running locally, follow these instructions:
 
 	```sql
 	CREATE DATABASE ontherocks CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-	GRANT ALL ON ontherocks.* TO 'rocks_user'@'localhost' identified by 'yourpasswordhere';
+	GRANT ALL ON ontherocks.* TO 'rocks_user'@'localhost' identified by 'letmein';
 	FLUSH PRIVILEGES;
 	USE ontherocks;
 	```
