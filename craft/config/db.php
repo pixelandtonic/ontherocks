@@ -9,7 +9,7 @@
 
 return array(
 	'server'      => 'localhost',
-	'user'        => 'root',
+	'user'        => 'rocks_user',
 	'password'    => 'letmein',
 	'database'    => 'ontherocks',
 	'tablePrefix' => 'craft',
