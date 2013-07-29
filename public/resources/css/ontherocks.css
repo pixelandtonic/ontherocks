@@ -58,10 +58,6 @@ p {
 #header #account li { float: left; padding: 0 12px; }
 #header #account li + li { border-left: 1px solid rgba(255,255,255,0.25); }
 
-#header #loginForm { display: none; }
-#header #loginForm .text { font-size: 13px; line-height: 18px; vertical-align: middle; }
-#header #loginForm .submit { height: 24px; }
-
 
 /* main */
 #main { margin: 0 50px 50px; color: rgba(255,255,255,0.6); }
@@ -82,7 +78,6 @@ p {
 	        box-sizing: border-box;
 }
 
-#main .form { margin: 1em 0; padding: 25px; background: #fbf6e7; }
 #main label.checkbox { display: block; margin: 1em 0; }
 
 #main ul.errors { color: #992f2f; font-size: 13px; }

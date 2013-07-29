@@ -1,7 +1,7 @@
 /*
  Navicat MySQL Data Transfer
 
- Source Server         : Local
+ Source Server         : localhost
  Source Server Version : 50529
  Source Host           : localhost
  Source Database       : ontherocks
@@ -9,7 +9,7 @@
  Target Server Version : 50529
  File Encoding         : utf-8
 
- Date: 06/04/2013 10:47:04 AM
+ Date: 06/11/2013 10:40:49 AM
 */
 
 SET NAMES utf8;
@@ -139,13 +139,6 @@ CREATE TABLE `craft_assettransformindex` (
   PRIMARY KEY (`id`),
   KEY `craft_assettransformindex_sourceId_fileId_location_idx` (`sourceId`,`fileId`,`location`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- ----------------------------
---  Records of `craft_assettransformindex`
--- ----------------------------
-BEGIN;
-INSERT INTO `craft_assettransformindex` VALUES ('1', '167', '_AUTOx150_crop', '1', '1', '0', '2013-03-19 23:26:26', '2013-03-19 23:26:26', '2013-03-19 23:26:36', '656adbcd-31b4-4653-964a-c6d3d9bfb950'), ('2', '168', '_AUTOx150_crop', '1', '1', '0', '2013-03-19 23:26:26', '2013-03-19 23:26:26', '2013-03-19 23:26:36', '6537ab74-4670-41b4-80d7-0f155ded920d'), ('3', '169', '_AUTOx150_crop', '1', '1', '0', '2013-03-19 23:26:26', '2013-03-19 23:26:26', '2013-03-19 23:26:36', '7bc93f71-a12e-4a80-b82c-751345d484eb'), ('4', '167', '_AUTOx150_crop_center-center', '1', '1', '0', '2013-05-09 13:19:23', '2013-05-09 13:19:23', '2013-05-09 13:19:24', '73d6f6b3-5dca-4cb9-92d5-001273c55141'), ('5', '168', '_AUTOx150_crop_center-center', '1', '1', '0', '2013-05-09 13:19:23', '2013-05-09 13:19:23', '2013-05-09 13:19:24', 'be17b3b9-ea1a-49a5-8127-e78822b231eb'), ('6', '169', '_AUTOx150_crop_center-center', '1', '1', '0', '2013-05-09 13:19:23', '2013-05-09 13:19:23', '2013-05-09 13:19:25', 'f862e493-04b2-4979-9ec9-2058107c81a4'), ('7', '167', '_AUTOx100_crop_center-center', '1', '1', '0', '2013-05-30 20:15:41', '2013-05-30 20:15:41', '2013-05-30 20:15:42', '844943da-ee5f-4a4c-ac44-49a347286ba4'), ('8', '168', '_AUTOx100_crop_center-center', '1', '1', '0', '2013-05-30 20:15:41', '2013-05-30 20:15:41', '2013-05-30 20:15:42', '0f446549-88a4-4781-9097-9f90e7426609'), ('9', '169', '_AUTOx100_crop_center-center', '1', '1', '0', '2013-05-30 20:15:41', '2013-05-30 20:15:41', '2013-05-30 20:15:43', 'b5af9d58-10fe-42b0-9f0d-d1e6448c0542'), ('10', '162', '_AUTOx100_crop_center-center', '1', '1', '0', '2013-05-30 20:43:37', '2013-05-30 20:43:37', '2013-05-30 20:43:38', '865ba23c-be2f-4c48-a002-b1af7ada1ce4');
-COMMIT;
 
 -- ----------------------------
 --  Table structure for `craft_assettransforms`

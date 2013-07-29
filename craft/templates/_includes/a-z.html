@@ -4,14 +4,16 @@
  # and outputs a big ol’ list.
  #}
 
-<ul class="packery-container">
+<div class="packery-container">
 	{% for letter, letterEntries in entries | group('title|upper|slice(0, 1)') %}
 		<div class="pane">
 			<h2>{{ letter }}</h2>
 
-			{% for entry in letterEntries %}
-				<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
-			{% endfor %}
+			<ul>
+				{% for entry in letterEntries %}
+					<li><a href="{{ entry.url }}">{{ entry.title }}</a></li>
+				{% endfor %}
+			</ul>
 		</div>
 	{% endfor %}
-</ul>
+</div>

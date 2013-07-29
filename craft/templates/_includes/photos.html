@@ -13,7 +13,7 @@
  # If no photos are selected, we'll simply output a paragraph saying so.
  #}
 
-{% if photos %}
+{% if photos | length %}
 
 	{# Define a 'thumb' object that sets the parameters for our thumbnail image transforms #}
 	{% set thumb = { height: 100 } %}
