@@ -10,5 +10,5 @@
 return array(
 	//'devMode' => true,
 	'loginPath' => 'accounts/login',
-	'resetPasswordPath' => 'accounts/resetpassword',
+	'setPasswordPath' => 'accounts/resetpassword',
 );
