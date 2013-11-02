@@ -9,7 +9,7 @@
  Target Server Version : 50529
  File Encoding         : utf-8
 
- Date: 09/23/2013 06:19:19 AM
+ Date: 11/02/2013 14:37:01 PM
 */
 
 SET NAMES utf8;
@@ -611,7 +611,7 @@ CREATE TABLE `craft_info` (
 --  Records of `craft_info`
 -- ----------------------------
 BEGIN;
-INSERT INTO `craft_info` VALUES ('1', '1.2', '2336', 'Localize,PublishPro,Users', '2013-09-20 20:10:34', 'On the Rocks', 'http://ontherocks.dev', 'America/Los_Angeles', '1', '0', 'stable', '1970-01-01 00:33:32', '2013-09-23 13:13:09', '9915844a-dd8c-4227-80a7-ef05f5c7572c');
+INSERT INTO `craft_info` VALUES ('1', '1.2', '2399', 'Localize,PublishPro,Users', '2013-10-31 23:02:35', 'On the Rocks', 'http://ontherocks.dev', 'America/Los_Angeles', '1', '0', 'stable', '1970-01-01 00:33:32', '2013-11-02 21:31:08', '9915844a-dd8c-4227-80a7-ef05f5c7572c');
 COMMIT;
 
 -- ----------------------------
@@ -821,7 +821,7 @@ CREATE TABLE `craft_sessions` (
   KEY `craft_sessions_dateUpdated_idx` (`dateUpdated`),
   KEY `craft_sessions_userId_fk` (`userId`),
   CONSTRAINT `craft_sessions_userId_fk` FOREIGN KEY (`userId`) REFERENCES `craft_users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=52 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 --  Table structure for `craft_shunnedmessages`
@@ -1027,7 +1027,7 @@ CREATE TABLE `craft_users` (
 --  Records of `craft_users`
 -- ----------------------------
 BEGIN;
-INSERT INTO `craft_users` VALUES ('130', 'admin', null, '', '', 'support@buildwithcraft.com', '$2a$08$4YI.LHEoHtlNxlM4KEClD.8Ovw/RKHl8AKvrO9XdTd./5eWTyIcjO', 'en_us', '1', 'active', '2013-09-23 13:14:52', '127.0.0.1', null, null, '2013-05-19 23:02:09', '2013-03-19 23:37:29', null, null, '0', '2012-10-14 06:06:43', '2012-10-14 06:06:43', '2013-09-23 13:14:52', '0d9c0018-3dc3-47c0-b102-7ae94c061c52');
+INSERT INTO `craft_users` VALUES ('130', 'admin', null, '', '', 'support@buildwithcraft.com', '$2a$08$4YI.LHEoHtlNxlM4KEClD.8Ovw/RKHl8AKvrO9XdTd./5eWTyIcjO', 'en_us', '1', 'active', '2013-11-02 21:30:10', '127.0.0.1', null, null, '2013-05-19 23:02:09', '2013-03-19 23:37:29', null, null, '0', '2012-10-14 06:06:43', '2012-10-14 06:06:43', '2013-11-02 21:30:10', '0d9c0018-3dc3-47c0-b102-7ae94c061c52');
 COMMIT;
 
 -- ----------------------------
