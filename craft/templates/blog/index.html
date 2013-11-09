@@ -5,7 +5,7 @@
 	{% for blogPost in craft.entries.section('blog').status('live,pending').find() %}
 		<article class="pane">
 			<h2><a href="{{ blogPost.url }}">{{ blogPost.title }}</a></h2>
-			<p>Written by {{ entry.author }} on {{ entry.postDate|date('M d, Y') }}</p>
+			<p>Written by {{ blogPost.author }} on {{ blogPost.postDate|date('M d, Y') }}</p>
 			{{ blogPost.body.getPage(1) }}
 			<p><a href="{{ blogPost.url }}">Continue reading…</a></p>
 		</article>
