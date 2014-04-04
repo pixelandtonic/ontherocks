@@ -14,11 +14,9 @@ It has the following features:
 * Front-end user [registration](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/register.html), [login](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/login.html), and [password resetting](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/accounts/forgotpassword.html)
 * A custom [404 template](https://github.com/pixelandtonic/ontherocks/blob/master/craft/templates/404.html)
 
-## Packages in Use
+## Editions
 
-This site makes use of the [Publish Pro](http://docs.buildwithcraft.com/diving-in/packages/publishpro.html) and [Users](http://docs.buildwithcraft.com/diving-in/packages/users.html) packages.
-
-As long as you’re running the site from http://ontherocks.dev, you will not be notified that you haven’t purchased these packages. You will even have the option to install the other three packages, if you want to play around with them.
+The site is running the Pro Edition of Craft and as long as you’re running the site from http://ontherocks.dev, you can use all of the features if provides for free for an unlimited time.  You will even have the option to install the Client or Personal Editions, if you want to play around with them.
 
 
 ## Installation
@@ -40,7 +38,10 @@ To get *On the Rocks* running locally, follow these instructions:
 
 4. Download the latest version of Craft from [buildwithcraft.com](http://buildwithcraft.com)
 
-		$ curl -L http://buildwithcraft.com/Craft.zip -o /tmp/Craft.zip
+		$ curl -L http://download.buildwithcraft.com/craft/2.0/2.0.2525/Craft-2.0.2525.zip -o /tmp/Craft.zip
+
+		*Note:* In the above example, replace the version (2.0) and the build (2525) numbers with the latest from http://buildwithcraft.com/updates
+
 		$ unzip /tmp/Craft.zip -d BaseCraft
 
 5. Move the craft/app/ folder from Craft.zip into ontherocks/craft/
